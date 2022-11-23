@@ -49,14 +49,14 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/login"
                                 aria-label="Sign in"
                                 title="Sign in"
                                 class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                Sign in
-                            </a>
+                                Log in
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -169,14 +169,14 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/login"
                                                     aria-label="Sign in"
                                                     title="Sign in"
                                                     class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Sign in
-                                                </a>
+                                                    Log in
+                                                </Link>
                                             </li>
                                             <li>
                                                 <a
