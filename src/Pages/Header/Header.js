@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import img from '../../assests/240_F_204205339_vCkKDvN8YBgx0Q77bejn5xHY6q4JbSnN.jpg'
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,18 +27,17 @@ const Header = () => {
                                 Features
                             </a>
                         </li>
-
                     </ul>
                     <Link
                         to="/"
-                        aria-label="Company"
-                        title="Company"
-                        class="inline-flex items-center"
                     >
-                       
-                        <span class="ml-2 text-xl font-bold tracking-wide text-orange-600 uppercase">
-                            Goriber Seller
-                        </span>
+                        <div className='flex items-center'>
+                            <img className='w-[50px] ' src={img} alt="" />
+                            <span class="ml-2 text-xl font-bold tracking-wide text-orange-600 uppercase">
+                                Goriber Seller
+                            </span>
+                        </div>
+
                     </Link>
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
