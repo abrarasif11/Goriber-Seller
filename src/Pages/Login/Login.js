@@ -7,12 +7,12 @@ const Login = () => {
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
-                    <label for="username" className="block dark:text-gray-400">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                    <label for="email" className="block dark:text-gray-400">Email</label>
+                    <input type="email" name="username" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
                 <div className="space-y-1 text-sm">
                     <label for="password" className="block dark:text-gray-400">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                    <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                     <div className="flex justify-end text-xs dark:text-gray-400">
                         <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                     </div>
