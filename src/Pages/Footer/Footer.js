@@ -27,7 +27,7 @@ const Footer = () => {
                             <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                            Company
+                            Goriber Seller
                         </span>
                     </a>
                     <div className="mt-4 lg:max-w-sm">
@@ -214,7 +214,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row">
                 <p className="text-sm text-gray-600">
-                    © Copyright 2020 Lorem Inc. All rights reserved.
+                    © Copyright 2022 Goriber Seller. All rights reserved.
                 </p>
                 <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                     <a
