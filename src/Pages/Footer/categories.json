@@ -1,14 +1,134 @@
 [
     {
-      "picture": "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "name": "Apple"
+      "picture": "https://images.unsplash.com/photo-1575717647943-6b2146343437?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "brand": "Apple",
+      "model": "Iphone 11 Pro Max",
+      "location": "Katabon,Dhaka",
+      "original_price": "95000",
+      "resale_price": "65000",
+      "years_of_use": "10 months",
+      "posted_time": "24 November,2022",
+      "sellers_name": "Ifat Rahman Ariyan"
     },
     {
-      "picture": "https://images.unsplash.com/photo-1599612818023-4ddd8b6de710?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=405&q=80",
-      "name": "Xiaomi"
+      "picture": "https://images.unsplash.com/photo-1592286927505-1def25115558?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "brand": "Apple",
+      "model": "Iphone 11",
+      "location": "Khilkhet,Dhaka",
+      "original_price": "65000",
+      "resale_price": "45000",
+      "years_of_use": "11 months",
+      "posted_time": "24 November,2022",
+      "sellers_name": "Md Mahedi Hasan Talukdar"
     },
     {
-      "picture": "https://images.unsplash.com/photo-1658321467213-3af4efda4904?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      "name": "One Plus"
+      "picture": "https://images.unsplash.com/photo-1603812188321-94ba55ed5652?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=356&q=80",
+      "brand": "Apple",
+      "model": "Iphone XR",
+      "location": "Khilgaon,Dhaka",
+      "original_price": "45000",
+      "resale_price": "30000",
+      "years_of_use": "1.5 Years",
+      "posted_time": "24 November,2022",
+      "sellers_name": "Mobarak Hossain Insane"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1591447337751-c7b95cf704ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1488&q=80",
+      "brand": "Xiaomi",
+      "model": "Redmi Note 10 Lite",
+      "location": "Bashabo, Dhaka",
+      "original_price": "19000",
+      "resale_price": "12000",
+      "years_of_use": "1 Years",
+      "posted_time": "23 November,2022",
+      "sellers_name": "Mir Nabid Rahman"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1624434207284-727cf0e6ea8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "brand": "Xiaomi",
+      "model": "Xiaomi 11 Ultra",
+      "location": "Jatrabari, Dhaka",
+      "original_price": "120,990",
+      "resale_price": "110,000",
+      "years_of_use": "3 months",
+      "posted_time": "23 November,2022",
+      "sellers_name": "MD Yasin Arafat"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1598327105740-820e04db502e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80",
+      "brand": "Xiaomi",
+      "model": "Xiaomi 11 Ultra",
+      "location": "Rayerbag, Dhaka",
+      "original_price": "20,990",
+      "resale_price": "15,000",
+      "years_of_use": "8 months",
+      "posted_time": "23 November,2022",
+      "sellers_name": "MD Jewel Islam"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1658321466969-1c45400bb947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "brand": "One Plus",
+      "model": "One Plus 9 Pro",
+      "location": "HatirJheel,Dhaka",
+      "original_price": "45000",
+      "resale_price": "40000",
+      "years_of_use": "7 months",
+      "posted_time": "22 November,2022",
+      "sellers_name": "Ismail Hossain Siam"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1652352545956-34c26af007da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "brand": "One Plus",
+      "model": "One Plus 8 Pro",
+      "location": "Natunbazar,Dhaka",
+      "original_price": "40000",
+      "resale_price": "30000",
+      "years_of_use": "1.5 years",
+      "posted_time": "22 November,2022",
+      "sellers_name": "Shihab Sikhder"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1580521923679-6d275830d039?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "brand": "One Plus",
+      "model": "One Plus 7 Pro",
+      "location": "Karyanbazar,Dhaka",
+      "original_price": "35000",
+      "resale_price": "30000",
+      "years_of_use": "1 years",
+      "posted_time": "22 November,2022",
+      "sellers_name": "Zerin Khan"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1537589376225-5405c60a5bd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      "brand": "Apple",
+      "model": "Iphone X",
+      "location": "Kamarangir Chor,Dhaka",
+      "original_price": "50000",
+      "resale_price": "35000",
+      "years_of_use": "10 months",
+      "posted_time": "21 November,2022",
+      "sellers_name": "Fahima Akhter Saima"
+    },
+    {
+      "picture": "https://u.kanobu.ru/editor/images/90/3402c139-adfd-4a8f-b7a8-23809cca4548.png",
+      "brand": "Xiaomi",
+      "model": "Redmi K20 Pro",
+      "location": "Kamalapur,Dhaka",
+      "original_price": "40000",
+      "resale_price": "25000",
+      "years_of_use": "1 years",
+      "posted_time": "21 November,2022",
+      "sellers_name": "Zannatin Tazri Zan"
+    },
+    {
+      "picture": "https://assets.thehansindia.com/h-upload/2019/10/05/223465-banner.jpg",
+      "brand": "One Plus",
+      "model": "One Plus 7T",
+      "location": "Uttara,Dhaka",
+      "original_price": "37000",
+      "resale_price": "25000",
+      "years_of_use": "10 months",
+      "posted_time": "21 November,2022",
+      "sellers_name": "Fahmida Akhter Tonny"
     }
   ]

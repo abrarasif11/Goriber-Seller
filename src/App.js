@@ -5,6 +5,7 @@ import Blog from './Pages/Blog/Blog';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import Errorpage from './Pages/Errorpage/Errorpage';
+import AllCategories from './Pages/AllCategories/AllCategories';
 
 function App() {
     const router = createBrowserRouter([
@@ -16,6 +17,11 @@ function App() {
             path: '/',
             element: <Home></Home>,
             loader: () => fetch('http://localhost:5000/categories')
+          },
+          {
+              path: '/allcategories',
+              element:<AllCategories></AllCategories>,
+              loader: () => fetch('http://localhost:5000/allcategories')
           },
           {
             path: '/blog',

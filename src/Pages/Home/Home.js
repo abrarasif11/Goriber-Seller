@@ -1,10 +1,14 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Offer from '../../Offer/Offer';
 import Banner from './Banner/Banner';
 import Category from './Category/Category';
 
 const Home = () => {
+    const navigate = useNavigate();
+    const handleAllCategory = () => {
+        navigate("/allcategories");
+    };
     const categories = useLoaderData();
     return (
         <div className='font-poppins'>
@@ -40,8 +44,17 @@ const Home = () => {
                     >
                     </Category>)
                 }
+                <Link className='items-center justify-center
+                       ' to='/allcategories'>
+                    <button
+                        className="py-4 px-6  m-8 font-poppins text-xl text-black  font-medium rounded-lg bg-gradient-to-rounded-md bg-orange-600
+                       hover:bg-orange-400	 hover:text-black"
+                        onClick={handleAllCategory}
+                    >
+                        See All Products
+                    </button>
+                </Link>
             </div>
-
 
         </div>
     );
