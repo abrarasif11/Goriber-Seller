@@ -1,9 +1,11 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Offer from '../../Offer/Offer';
 import Banner from './Banner/Banner';
 import Category from './Category/Category';
 
 const Home = () => {
+    const categories = useLoaderData();
     return (
         <div className='font-poppins'>
             <h1 className='text-center font-poppins text-3xl mt-10 font-bold'>Welcome To ,
@@ -28,8 +30,19 @@ const Home = () => {
                         </p>
                     </span>
                 </span></h1>
-                <Offer></Offer>
-                <Category></Category>
+            <Offer></Offer>
+            <h3 className='text-3xl font-bold text-center'>Categories to buy</h3>
+            <div className='grid sm:grid-cols-3 gap-3 ml-10 sm:mt-10 mt-10 mb-20'>
+                {
+                    categories.map(category => <Category
+                        key={category._id}
+                        category={category}
+                    >
+                    </Category>)
+                }
+            </div>
+
+
         </div>
     );
 };

@@ -1,0 +1,14 @@
+[
+    {
+      "picture": "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+      "name": "Apple"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1599612818023-4ddd8b6de710?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=405&q=80",
+      "name": "Xiaomi"
+    },
+    {
+      "picture": "https://images.unsplash.com/photo-1658321467213-3af4efda4904?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "name": "One Plus"
+    }
+  ]
