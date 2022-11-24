@@ -5,7 +5,7 @@ import Category from './Category/Category';
 
 const Home = () => {
     return (
-        <div >
+        <div className='font-poppins'>
             <h1 className='text-center font-poppins text-3xl mt-10 font-bold'>Welcome To ,
                 <br />
                 <span className='text-5xl text-orange-600'>Goriber Seller</span></h1>
