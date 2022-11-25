@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/Authprovider/Authprovider';
 
 const OrderModal = ({ categories }) => {
@@ -10,8 +11,33 @@ const OrderModal = ({ categories }) => {
         const name = form.name.value;
         const email = form.email.value;
         const phone = form.phone.value;
-        console.log(name,email,phone);
-    }
+        const meeting = form.meeting.value;
+        const formValue = {name ,email, meeting ,phone};
+        console.log(formValue);
+  
+       if (user?.uid) {
+           fetch("http://localhost:5000/items", {
+               method: "POST",
+               headers: {
+                   "content-type": "application/json",
+               },
+               body: JSON.stringify(formValue),
+           })
+               .then((res) => res.json())
+               .then((data) => {
+                   console.log(data);
+                   if (data.acknowledged) {
+                       toast.success("Order Confirm Successfully");
+                     
+                   }
+               })
+               .catch((err) => console.log(err));
+       } else {
+           toast.alert("Please login first to provide Items");
+       }
+   }
+
+   
         return (
             <>
                 <input type="checkbox" id="order-modal" className="modal-toggle" />
@@ -19,7 +45,7 @@ const OrderModal = ({ categories }) => {
                     <div className="modal-box font-poppins relative">
                         <label htmlFor="order-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <h3 className="text-lg ml-2 font-bold">Brand - {brand}</h3>
-                        <form onClick={handleBooking} className='grid grid-cols-1  gap-3 mt-10'>
+                        <form onSubmit={handleBooking} className='grid grid-cols-1  gap-3 mt-10'>
                             <input type="text" disabled value={model} className="input w-full input-bordered" />
                             <input type="text" disabled value={resale_price} className="input w-full input-bordered" />
                             <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
