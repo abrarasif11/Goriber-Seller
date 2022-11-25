@@ -3,7 +3,7 @@ import React from 'react';
 const Category = ({category}) => {
     return (
         <div>
-                <div className="max-w-xs rounded-md shadow-md bg-gray-300 dark:text-gray-100">
+                <div className="max-w-xs rounded-md ml-8 mt-10 shadow-md bg-stone-300 dark:text-gray-100">
                     <img src={category.picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                     <div className="flex flex-col justify-between p-6 space-y-8">
                         <div className="space-y-2">

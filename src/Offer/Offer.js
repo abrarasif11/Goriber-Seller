@@ -1,31 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Offers from './Offers';
 
 const Offer = () => {
+    const [offers, setOffers] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/offers')
+            .then(res => res.json())
+            .then(data => setOffers(data))
+    }, [])
     return (
-        <div className="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
-            <div className="container p-6 mx-auto space-y-8">
-                <div className="space-y-2 text-center">
-                    <h2 className="text-3xl font-bold">View Our Offer</h2>
-                   
-                </div>
-                <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-                    <article className="flex flex-col dark:bg-gray-900">
-                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                            <img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src="https://source.unsplash.com/200x200/?fashion?1" />
-                        </a>
-                        <div className="flex flex-col flex-1 p-6">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                            <a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-400">Convenire</a>
-                            <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                            <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                                <span>June 1, 2020</span>
-                                <span>2.1K views</span>
-                            </div>
-                        </div>
-                    </article>
+        <section>
+        <div className="p-6 py-12 mt-20 mb-5 rounded bg-black text-orange-600">
+            <div className="container mx-auto">
+                <div className="flex flex-col lg:flex-row items-center justify-between">
+                    <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
+                        <br className="sm:hidden" /> 20% Off
+                    </h2>
+                    <div className="space-x-2 text-center py-2 lg:py-0">
+                        <span>Plus free home delivery! Use code:</span>
+                        <span className="font-bold text-lg">GS 77</span>
+                    </div>
+                    <Link to="/allcategories" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-orange-600 text-black hover:bg-black hover:text-orange-600">Shop Now</Link>
                 </div>
             </div>
         </div>
+        <div className='grid sm:grid-cols-3 gap-3 mb-20'>
+        {
+                offers.map(offer => <Offers
+                    key={offer._id}
+                    offer={offer}
+                ></Offers>)
+            }
+        </div>
+        </section>
     );
 };
 

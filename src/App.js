@@ -21,7 +21,7 @@ function App() {
           {
               path: '/allcategories',
               element:<AllCategories></AllCategories>,
-              loader: () => fetch('http://localhost:5000/allcategories')
+              // loader: () => fetch('http://localhost:5000/allcategories')
           },
           {
             path: '/blog',
@@ -43,7 +43,7 @@ function App() {
       }
     ])
   return (
-    <div className="App">
+    <div >
      <RouterProvider router={router}></RouterProvider>  
     </div>
   );
