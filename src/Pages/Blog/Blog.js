@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../Offer/shared/useTitle';
 
 const Blog = () => {
+    useTitle("Blog")
     return (
         <section className="font-poppins mb-10 mt-10 dark:bg-gray-800 dark:text-gray-100 mt-10">
             <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">

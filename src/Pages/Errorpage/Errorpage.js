@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import error from '../../assests/21510358.jpg'
+import useTitle from '../../Offer/shared/useTitle';
 
 const Errorpage = () => {
+    useTitle("ErrorPage")
     return (
         <div className='text-center '>
             <img className='mx-auto -m-40' src={error} alt="" />

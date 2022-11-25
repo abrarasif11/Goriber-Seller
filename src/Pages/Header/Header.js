@@ -55,13 +55,20 @@ const Header = () => {
                         <li>
                             {
                                 user?.uid ?
-
-                                    <button
-                                        onClick={handleLogout}
-                                        className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
-                                    >
-                                        Log Out
-                                    </button>
+                                    <>
+                                        <Link
+                                            to="/dashboard"
+                                            className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Dashboard
+                                        </Link>
+                                        <button
+                                            onClick={handleLogout}
+                                            className="font-medium tracking-wide ml-6 bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Log Out
+                                        </button>
+                                    </>
                                     :
                                     <Link
                                         to="/login"
@@ -159,26 +166,33 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                            {
-                                user?.uid ?
+                                                {
+                                                    user?.uid ?
+                                                        <>
+                                                            <Link
+                                                                to="/dashboard"
+                                                                className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                            >
+                                                                Dashboard
+                                                            </Link>
+                                                            <button
+                                                                onClick={handleLogout}
+                                                                className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                                            >
+                                                                Log Out
+                                                            </button>
+                                                        </>
+                                                        :
+                                                        <Link
+                                                            to="/login"
 
-                                    <button
-                                        onClick={handleLogout}
-                                        className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
-                                    >
-                                        Log Out
-                                    </button>
-                                    :
-                                    <Link
-                                        to="/login"
-
-                                        className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
-                                    >
-                                        Log in
-                                    </Link>
-                            }
+                                                            className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                        >
+                                                            Log in
+                                                        </Link>
+                                                }
                                             </li>
-                                           
+
                                         </ul>
                                     </nav>
                                 </div>

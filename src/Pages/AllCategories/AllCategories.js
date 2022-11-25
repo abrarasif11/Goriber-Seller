@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Offer/shared/useTitle';
 import OrderModal from '../OrderModal/OrderModal';
 import AllCategory from './AllCategory';
 
 const AllCategories = () => {
+    useTitle("All Categories")
     const [allcategories, setAllcategories ] = useState([]);
     const [categories, setCategories] = useState(null)
 

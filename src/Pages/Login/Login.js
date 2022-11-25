@@ -2,8 +2,10 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
+import useTitle from '../../Offer/shared/useTitle';
 
 const Login = () => {
+    useTitle("Log in")
     const { user, signIn, googleSignIn } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const handleSubmit = (event) => {

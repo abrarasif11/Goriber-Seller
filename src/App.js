@@ -7,6 +7,9 @@ import SignUp from './Pages/SignUp/SignUp';
 import Errorpage from './Pages/Errorpage/Errorpage';
 import AllCategories from './Pages/AllCategories/AllCategories';
 import Spinner from './Offer/shared/Spinner/Spinner';
+import useTitle from './Offer/shared/useTitle';
+import { Toaster } from 'react-hot-toast';
+import Dashboard from './Offer/shared/Dashboard/Dashboard/Dashboard';
 
 function App() {
     const router = createBrowserRouter([
@@ -39,13 +42,18 @@ function App() {
         ]
       },
       {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard> 
+      },
+      {
        path: '*',
        element: <Errorpage></Errorpage>
       }
     ])
   return (
     <div >
-     <RouterProvider fallbackElement={<Spinner></Spinner>}  router={router}></RouterProvider>  
+     <RouterProvider fallbackElement={<Spinner></Spinner>}  router={router}></RouterProvider> 
+     <Toaster></Toaster> 
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Offer from '../../Offer/Offer';
+import useTitle from '../../Offer/shared/useTitle';
 import Banner from './Banner/Banner';
 import Category from './Category/Category';
 
 const Home = () => {
+    useTitle('Home')
     const navigate = useNavigate();
     const handleAllCategory = () => {
         navigate("/allcategories");
