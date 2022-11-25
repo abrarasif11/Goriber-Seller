@@ -10,6 +10,7 @@ import Spinner from './Offer/shared/Spinner/Spinner';
 import useTitle from './Offer/shared/useTitle';
 import { Toaster } from 'react-hot-toast';
 import Dashboard from './Offer/shared/Dashboard/Dashboard/Dashboard';
+import SinglePhoneCategory from './Pages/SignglePhoneCategory/SinglePhoneCategory';
 
 function App() {
     const router = createBrowserRouter([
@@ -38,7 +39,13 @@ function App() {
           {
             path: '/signup',
             element : <SignUp></SignUp>
-          }
+          },
+          {
+            path: "/categories/:id",
+            loader: ({ params }) =>
+              fetch(`http://localhost:5000/categories/${params.id}`),
+            element: <SinglePhoneCategory></SinglePhoneCategory>,
+          },
         ]
       },
       {

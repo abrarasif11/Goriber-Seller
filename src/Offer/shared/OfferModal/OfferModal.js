@@ -1,6 +1,7 @@
 import React from 'react';
 
 const OfferModal = ({phones}) => {
+    console.log(phones);
     const {model} = phones;
     return (
         <div>

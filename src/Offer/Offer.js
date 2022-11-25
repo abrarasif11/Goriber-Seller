@@ -12,6 +12,7 @@ const Offer = () => {
             .then(res => res.json())
             .then(data => setOffers(data))
     }, [])
+    console.log(phones);
     return (
         <section>
             <div className="p-6 py-12 mt-20 mb-5 rounded bg-black text-orange-600">
@@ -28,21 +29,6 @@ const Offer = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid sm:grid-cols-3 gap-3 mb-20'>
-                {
-                    offers.map(offer => <Offers
-                        key={offer._id}
-                        offer={offer}
-                        setPhones={setPhones}
-                    ></Offers>)
-                }
-            </div>
-            {  phones && 
-                <OfferModal>
-                    phones={phones}
-                </OfferModal>
-            }
-
         </section>
     );
 };

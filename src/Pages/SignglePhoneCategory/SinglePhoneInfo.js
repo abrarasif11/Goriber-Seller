@@ -1,12 +1,12 @@
 import React from 'react';
 
-const AllCategory = ({ allcategory, setCategories }) => {
-    const { picture, brand, model, location, original_price, resale_price, years_of_use, posted_time, sellers_name } = allcategory
+const SinglePhoneInfo = ({ singlePhone }) => {
+    const {picture,brand,model,location,original_price,resale_price,years_of_use,posted_time,sellers_name} = singlePhone
     return (
-        <div className="max-w-xs my-10 ml-8 font-poppins rounded-md shadow-md bg-stone-300	 dark:font-semibold">
+        <div className="max-w-xs font-poppins rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
             <img src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
             <div className="flex flex-col justify-between p-6 space-y-8">
-                <div className="space-y-2">
+            <div className="space-y-2">
                     <h2 className="text-2xl font-bold tracking-wide">Brand : {brand}</h2>
                     <h2 className="text-xl font-semibold tracking-wide">Model : {model}</h2>
                     <h2 className="text-xs font-semibold tracking-wide">Location : {location}</h2>
@@ -16,14 +16,10 @@ const AllCategory = ({ allcategory, setCategories }) => {
                     <p className=" text-xs font-semibold">Posted Time : {posted_time}</p>
                     <p className=" text-xs font-semibold">Seller Name : {sellers_name}</p>
                 </div>
-                <label 
-                 htmlFor="order-modal" type="button"
-                 className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900"
-                 onClick={() => setCategories(allcategory)}
-                 >Order Now</label>
+                <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900">Order Now</button>
             </div>
         </div>
     );
 };
 
-export default AllCategory;
+export default SinglePhoneInfo;

@@ -55,20 +55,25 @@ const Header = () => {
                         <li>
                             {
                                 user?.uid ?
-                                    <>
+                                    <div className='flex justify-center items-center'>
                                         <Link
                                             to="/dashboard"
                                             className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
                                         >
                                             Dashboard
+
                                         </Link>
+                                        
+                                        <span className=""><img src={user?.photoURL} title={user?.displayName} className=" ml-5 h-10 sm:h2 rounded-full" alt="" /></span>
+                                        
                                         <button
                                             onClick={handleLogout}
                                             className="font-medium tracking-wide ml-6 bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
                                         >
                                             Log Out
                                         </button>
-                                    </>
+                                        
+                                    </div>
                                     :
                                     <Link
                                         to="/login"

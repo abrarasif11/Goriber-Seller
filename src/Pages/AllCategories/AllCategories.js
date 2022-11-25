@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../Offer/shared/useTitle';
 import OrderModal from '../OrderModal/OrderModal';
 import AllCategory from './AllCategory';

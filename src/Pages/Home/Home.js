@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Offer from '../../Offer/Offer';
+import CustomerReview from '../../Offer/shared/CustomerReview/CustomerReview';
 import useTitle from '../../Offer/shared/useTitle';
 import Banner from './Banner/Banner';
 import Category from './Category/Category';
@@ -37,7 +38,7 @@ const Home = () => {
                     </span>
                 </span></h1>
             <Offer></Offer>
-            <h3 className='text-3xl font-bold text-center'>Categories to buy</h3>
+            <h3 className='text-4xl font-bold text-center mt-20'>Categories to buy</h3>
             <div className='grid sm:grid-cols-3 gap-3 ml-10 sm:mt-10 mt-10 mb-20'>
                 {
                     categories.map(category => <Category
@@ -57,7 +58,9 @@ const Home = () => {
                     </button>
                 </Link>
             </div>
-
+            <h3 className='text-center text-4xl font-bold mb-10'>See Our Customer Review</h3>
+           <CustomerReview></CustomerReview>
+  
         </div>
     );
 };
