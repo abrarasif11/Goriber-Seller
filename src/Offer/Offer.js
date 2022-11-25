@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Offers from './Offers';
+import OfferModal from './shared/OfferModal/OfferModal';
 
 const Offer = () => {
     const [offers, setOffers] = useState([]);
+    const [phones, setPhones] = useState(null)
 
     useEffect(() => {
         fetch('http://localhost:5000/offers')
@@ -12,28 +14,35 @@ const Offer = () => {
     }, [])
     return (
         <section>
-        <div className="p-6 py-12 mt-20 mb-5 rounded bg-black text-orange-600">
-            <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row items-center justify-between">
-                    <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
-                        <br className="sm:hidden" /> 20% Off
-                    </h2>
-                    <div className="space-x-2 text-center py-2 lg:py-0">
-                        <span>Plus free home delivery! Use code:</span>
-                        <span className="font-bold text-lg">GS 77</span>
+            <div className="p-6 py-12 mt-20 mb-5 rounded bg-black text-orange-600">
+                <div className="container mx-auto">
+                    <div className="flex flex-col lg:flex-row items-center justify-between">
+                        <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
+                            <br className="sm:hidden" /> 20% Off
+                        </h2>
+                        <div className="space-x-2 text-center py-2 lg:py-0">
+                            <span>Plus free home delivery! Use code:</span>
+                            <span className="font-bold text-lg">GS 77</span>
+                        </div>
+                        <Link to="/allcategories" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-orange-600 text-black hover:bg-black hover:text-orange-600">Shop Now</Link>
                     </div>
-                    <Link to="/allcategories" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-orange-600 text-black hover:bg-black hover:text-orange-600">Shop Now</Link>
                 </div>
             </div>
-        </div>
-        <div className='grid sm:grid-cols-3 gap-3 mb-20'>
-        {
-                offers.map(offer => <Offers
-                    key={offer._id}
-                    offer={offer}
-                ></Offers>)
+            <div className='grid sm:grid-cols-3 gap-3 mb-20'>
+                {
+                    offers.map(offer => <Offers
+                        key={offer._id}
+                        offer={offer}
+                        setPhones={setPhones}
+                    ></Offers>)
+                }
+            </div>
+            {  phones && 
+                <OfferModal>
+                    phones={phones}
+                </OfferModal>
             }
-        </div>
+
         </section>
     );
 };

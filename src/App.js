@@ -6,6 +6,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import Errorpage from './Pages/Errorpage/Errorpage';
 import AllCategories from './Pages/AllCategories/AllCategories';
+import Spinner from './Offer/shared/Spinner/Spinner';
 
 function App() {
     const router = createBrowserRouter([
@@ -21,7 +22,7 @@ function App() {
           {
               path: '/allcategories',
               element:<AllCategories></AllCategories>,
-              // loader: () => fetch('http://localhost:5000/allcategories')
+              
           },
           {
             path: '/blog',
@@ -44,7 +45,7 @@ function App() {
     ])
   return (
     <div >
-     <RouterProvider router={router}></RouterProvider>  
+     <RouterProvider fallbackElement={<Spinner></Spinner>}  router={router}></RouterProvider>  
     </div>
   );
 }

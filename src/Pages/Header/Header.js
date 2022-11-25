@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assests/240_F_204205339_vCkKDvN8YBgx0Q77bejn5xHY6q4JbSnN.jpg'
-
+import { AuthContext } from "../../Context/Authprovider/Authprovider";
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(err => console.log(err));
+    }
     return (
         <div class="bg-black font-poppins">
             <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -47,24 +53,24 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to="/login"
-                                aria-label="Sign in"
-                                title="Sign in"
-                                class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Log in
-                            </Link>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Sign up"
-                                title="Sign up"
-                                class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Sign up
-                            </a>
+                            {
+                                user?.uid ?
+
+                                    <button
+                                        onClick={handleLogout}
+                                        className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Log Out
+                                    </button>
+                                    :
+                                    <Link
+                                        to="/login"
+
+                                        className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Log in
+                                    </Link>
+                            }
                         </li>
                     </ul>
                     <div class="lg:hidden">
@@ -74,7 +80,7 @@ const Header = () => {
                             class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
                             onClick={() => setIsMenuOpen(true)}
                         >
-                            <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+                            <svg class="w-5 text-orange-600" viewBox="0 0 24 24">
                                 <path
                                     fill="currentColor"
                                     d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
@@ -100,7 +106,7 @@ const Header = () => {
                                                 title="Company"
                                                 class="inline-flex items-center"
                                             >
-                                               <img className='w-[50px]' src={img} alt="" />
+                                                <img className='w-[50px]' src={img} alt="" />
                                                 <span class="ml-2 text-xl font-bold tracking-wide text-orange-600 uppercase">
                                                     Goriber Seller
                                                 </span>
@@ -153,25 +159,26 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link
-                                                    to="/login"
-                                                    aria-label="Sign in"
-                                                    title="Sign in"
-                                                    class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Log in
-                                                </Link>
+                                            {
+                                user?.uid ?
+
+                                    <button
+                                        onClick={handleLogout}
+                                        className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Log Out
+                                    </button>
+                                    :
+                                    <Link
+                                        to="/login"
+
+                                        className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Log in
+                                    </Link>
+                            }
                                             </li>
-                                            <li>
-                                                <a
-                                                    href="/"
-                                                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
-                                                >
-                                                    Sign up
-                                                </a>
-                                            </li>
+                                           
                                         </ul>
                                     </nav>
                                 </div>
