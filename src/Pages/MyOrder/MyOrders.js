@@ -1,41 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { useQuery } from '@tanstack/react-query';
+import { AuthContext } from '../../Context/Authprovider/Authprovider';
+
 
 const MyOrders = () => {
+    const { user } = useContext(AuthContext);
+    const url = `http://localhost:5000/items?email=${user?.email}`;
+
+    const { data: items = [] } = useQuery({
+        queryKey: ['items', user?.email],
+        queryFn: async () => {
+            const res = await fetch(url);
+            const data = await res.json();
+            return data;
+        }
+    })
     return (
         <div>
-            <h3 className='mt-10 text-3xl mb-10'>My Orders</h3>
+            <h1 className='text-3xl font-bold mb-10 mt-5 '>Selected Items</h1>
+
+
+
             <div className="overflow-x-auto">
-  <table className="table w-full">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+                <table className="table w-full">
+
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Email</th>
+                            <th>Model</th>
+                            <th>Price</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            items.map((item, i) =>
+                                <tr key={item._id}>
+                                    <th>{i+1}</th>
+                                    <th>{item.email}</th>
+                                    <td>{item.model}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.phone}</td>
+                                </tr>
+
+                            )
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

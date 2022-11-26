@@ -27,7 +27,7 @@ function App() {
         },
         {
           path: '/allcategories',
-          element: <AllCategories></AllCategories>,
+          element: <PrivateRoute><AllCategories></AllCategories></PrivateRoute>,
 
         },
         {
