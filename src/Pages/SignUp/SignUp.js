@@ -23,20 +23,38 @@ const SignUp = () => {
                 const user = userCredential.user;
                 console.log(user);
                 toast.success("User Created Successfully")
+                saveUser( username, email);
                 form.reset();
             })
             .catch((error) => {
                 console.error(error);
             });
     };
+    const saveUser = (name, email, dropdown) => {
+        const usersSaved = { name, email, dropdown };
+        console.log(usersSaved);
+        fetch("http://localhost:5000/usersList", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(usersSaved),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
 
+            })
+            .catch((err) => console.log(err));
+
+    }
     return (
         <div className="w-full font-poppins mx-auto mt-20 mb-20 max-w-md p-8 space-y-3 rounded-xl bg-gray-600 text-gray-100">
             <h1 className="text-2xl font-bold text-center">Sign Up</h1>
             <form onSubmit={handleSignUp} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block dark:text-gray-400">Username</label>
-                    <input type="text" name="username" id="username" placeholder="username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
+                    <input type="username" name="username" id="username" placeholder="username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
                 {/* select */}
                 <select type="dropdown" name="dropdown" id="dropdown"
@@ -48,7 +66,7 @@ const SignUp = () => {
                 {/* photo input */}
                 <input name='file' type="file" className="file-input w-full text-black" />
                 <div className="space-y-1 text-sm">
-                    <label htmlFor="username" className="block dark:text-gray-400">Email</label>
+                    <label htmlFor="email" className="block dark:text-gray-400">Email</label>
                     <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
                 <div className="space-y-1 text-sm">
