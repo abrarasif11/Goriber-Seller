@@ -11,10 +11,12 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
+        const dropdown = form.dropdown.value;
+        const file = form.file.value;
         const username = form.username.value;
         const password = form.password.value;
 
-        console.log({ email, password, username });
+        console.log({ email, password, username, file, dropdown });
 
         createUser(email, password)
             .then((userCredential) => {
@@ -33,15 +35,24 @@ const SignUp = () => {
             <h1 className="text-2xl font-bold text-center">Sign Up</h1>
             <form onSubmit={handleSignUp} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
-                    <label for="username" className="block dark:text-gray-400">Username</label>
+                    <label htmlFor="username" className="block dark:text-gray-400">Username</label>
                     <input type="text" name="username" id="username" placeholder="username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
+                {/* select */}
+                <select type="dropdown" name="dropdown" id="dropdown"
+                    className="select text-black select-bordered w-full">
+                    <option disabled selected>Select User</option>
+                    <option>Buyer</option>
+                    <option>Seller</option>
+                </select>
+                {/* photo input */}
+                <input name='file' type="file" className="file-input w-full text-black" />
                 <div className="space-y-1 text-sm">
-                    <label for="username" className="block dark:text-gray-400">Email</label>
+                    <label htmlFor="username" className="block dark:text-gray-400">Email</label>
                     <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
                 <div className="space-y-1 text-sm">
-                    <label for="password" className="block dark:text-gray-400">Password</label>
+                    <label htmlFor="password" className="block dark:text-gray-400">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                 </div>
                 <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-orange-600">Sign Up</button>

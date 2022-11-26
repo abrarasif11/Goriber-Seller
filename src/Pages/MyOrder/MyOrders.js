@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../Context/Authprovider/Authprovider';
+import useTitle from '../../Offer/shared/useTitle';
 
 
 const MyOrders = () => {
+    useTitle('Dashboard')
     const { user } = useContext(AuthContext);
     const url = `http://localhost:5000/items?email=${user?.email}`;
 
@@ -17,7 +19,7 @@ const MyOrders = () => {
         }
     })
     return (
-        <div>
+        <div className='font-poppins'>
             <h1 className='text-3xl font-bold mb-10 mt-5 '>Selected Items</h1>
 
 

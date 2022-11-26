@@ -13,6 +13,8 @@ import PrivateRoute from './Offer/shared/PrivateRoute/PrivateRoute';
 import DashboardLayout from './Offer/shared/Dashboard/DashboardLayout/DashboardLayout';
 import Dashboard from './Offer/shared/Dashboard/Dashboard/Dashboard';
 import MyOrders from './Pages/MyOrder/MyOrders';
+import AllUsers from './Offer/shared/Dashboard/AllUsers/AllUsers';
+import AddProducts from './Offer/shared/Dashboard/AddProducts/AddProducts';
 
 function App() {
   const router = createBrowserRouter([
@@ -61,7 +63,15 @@ function App() {
         {
           path: '/dashboard',
           element: <MyOrders></MyOrders>
-        }
+        },
+        {
+          path : '/dashboard/allusers',
+          element: <AllUsers></AllUsers>
+        },
+        {
+          path : '/dashboard/addproducts',
+          element: <AddProducts></AddProducts>
+        },
       ]
     }
   ])
