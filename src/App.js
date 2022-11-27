@@ -15,6 +15,7 @@ import Dashboard from './Offer/shared/Dashboard/Dashboard/Dashboard';
 import MyOrders from './Pages/MyOrder/MyOrders';
 import AllUsers from './Offer/shared/Dashboard/AllUsers/AllUsers';
 import AddProducts from './Offer/shared/Dashboard/AddProducts/AddProducts';
+import AdminRoute from './Offer/shared/PrivateRoute/AdminRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -50,6 +51,7 @@ function App() {
             fetch(`http://localhost:5000/categories/${params.id}`),
           element: <SinglePhoneCategory></SinglePhoneCategory>,
         },
+
       ]
     },
     {
@@ -66,11 +68,11 @@ function App() {
         },
         {
           path : '/dashboard/allusers',
-          element: <AllUsers></AllUsers>
+          element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
         {
           path : '/dashboard/addproducts',
-          element: <AddProducts></AddProducts>
+          element: <AdminRoute><AddProducts></AddProducts></AdminRoute>
         },
       ]
     }
