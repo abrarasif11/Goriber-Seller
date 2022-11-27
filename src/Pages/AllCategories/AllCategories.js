@@ -16,7 +16,7 @@ const AllCategories = () => {
     return (
         <div>
             <h3 className='text-3xl font-poppins font-semibold text-center mt-10'>Total Products : {allcategories.length}</h3>
-            <div className='grid sm:grid-cols-3 gap-3 ml-10   mb-20 '>
+            <div className='grid sm:grid-cols-3 gap-3 ml-10 sm:ml-3  mb-20 '>
                 {
                     allcategories.map(allcategory =>
                         <AllCategory

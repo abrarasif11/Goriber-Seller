@@ -26,7 +26,7 @@ const AllUsers = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl'>All Users</h3>
+            <h3 className='text-3xl font-semibold mt-10 mb-4 ml-3'>All Users</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -43,10 +43,10 @@ const AllUsers = () => {
                             users.map((user, i) =>
                                 <tr key={user._id}>
                                     <th>{i+1}</th>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
-                                    <td>{ user?.role !== 'admin' &&  <button onClick={() => handleAdmin(user._id)} className='btn btn-primary text-white btn-xs'>Make Admin</button>}</td>
-                                    <td><button className='btn btn-xs btn-accent text-white'>Delete</button></td>
+                                    <td  className='text-green-700'>{user.name}</td>
+                                    <td  className='text-green-700'>{user.email}</td>
+                                    <td  className='text-green-700'>{ user?.role !== 'admin' &&  <button onClick={() => handleAdmin(user._id)} className='rounded px-2 py-1 text-black bg-orange-600  btn-xs'>Make Admin</button>}</td>
+                                    <td><button className='bg-red-700 px-2 py-1 rounded btn-xs  text-white'>Delete</button></td>
                                 </tr>
                             )
                         }

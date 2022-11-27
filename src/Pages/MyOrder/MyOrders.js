@@ -20,7 +20,7 @@ const MyOrders = () => {
     })
     return (
         <div className='font-poppins'>
-            <h1 className='text-3xl font-bold mb-10 mt-5 '>Selected Items</h1>
+            <h1 className='text-3xl font-bold mt-10 mb-4 ml-3 '>Selected Items</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -39,10 +39,10 @@ const MyOrders = () => {
                             items.map((item, i) =>
                                 <tr key={item._id}>
                                     <th>{i+1}</th>
-                                    <th>{item.email}</th>
-                                    <td>{item.model}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.phone}</td>
+                                    <th className='text-sky-700'>{item.email}</th>
+                                    <td className='text-sky-700'>{item.model}</td>
+                                    <td className='text-sky-700'>{item.price}</td>
+                                    <td className='text-sky-700'>{item.phone}</td>
                                 </tr>
 
                             )

@@ -3,6 +3,7 @@ import {  useNavigate } from 'react-router-dom';
 
 
 const Category = ({ category }) => {
+    console.log(category);
     const navigate = useNavigate()
     const handleOneCategory = (id) => {
         navigate(`/categories/${id}`);
@@ -15,7 +16,7 @@ const Category = ({ category }) => {
                     <div className="space-y-2">
                         <h2 className="text-3xl text-center font-semibold tracking-wide">{category.name}</h2>
                     </div>
-                    <button onClick={() => handleOneCategory(`${category._id}`)}  type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900">See All Products</button>
+                    <button onClick={() => handleOneCategory(`${category.category_id}`)}  type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900">See All Products</button>
                 </div>
             </div>
         </div>
