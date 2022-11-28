@@ -32,7 +32,7 @@ const AddProducts = () => {
     };
 
     console.log(product);
-    fetch(`https://server-assignment-12-abrarasif11.vercel.app/myproducts`, {
+    fetch(`https://server-assignment-12-omega.vercel.app/myproducts`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

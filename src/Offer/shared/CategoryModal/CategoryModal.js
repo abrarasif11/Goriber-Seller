@@ -18,7 +18,7 @@ const CategoryModal = ({ categories }) => {
         console.log(formValue);
 
         if (user?.uid) {
-            fetch("https://server-assignment-12-abrarasif11.vercel.app/items", {
+            fetch("https://server-assignment-12-omega.vercel.app/items", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

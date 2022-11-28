@@ -26,7 +26,7 @@ function App() {
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('https://server-assignment-12-abrarasif11.vercel.app/categories')
+          loader: () => fetch('https://server-assignment-12-omega.vercel.app/categories')
         },
         {
           path: '/allcategories',
@@ -48,7 +48,7 @@ function App() {
         {
           path: "/categories/:id",
           loader: ({ params }) =>
-            fetch(`https://server-assignment-12-abrarasif11.vercel.app/categories/${params.id}`),
+            fetch(`https://server-assignment-12-omega.vercel.app/categories/${params.id}`),
           element: <SinglePhoneCategory></SinglePhoneCategory>,
         },
 

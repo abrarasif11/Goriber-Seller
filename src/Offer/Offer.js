@@ -8,7 +8,7 @@ const Offer = () => {
     const [phones, setPhones] = useState(null)
 
     useEffect(() => {
-        fetch('https://server-assignment-12-abrarasif11.vercel.app/offers')
+        fetch('https://server-assignment-12-omega.vercel.app/offers')
             .then(res => res.json())
             .then(data => setOffers(data))
     }, [])

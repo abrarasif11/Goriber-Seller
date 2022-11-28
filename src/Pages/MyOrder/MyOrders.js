@@ -8,7 +8,7 @@ import useTitle from '../../Offer/shared/useTitle';
 const MyOrders = () => {
     useTitle('Dashboard')
     const { user } = useContext(AuthContext);
-    const url = `https://server-assignment-12-abrarasif11.vercel.app/items?email=${user?.email}`;
+    const url = `https://server-assignment-12-omega.vercel.app/items?email=${user?.email}`;
 
     const { data: items = [] } = useQuery({
         queryKey: ['items', user?.email],
