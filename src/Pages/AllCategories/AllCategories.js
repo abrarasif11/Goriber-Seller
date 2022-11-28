@@ -9,7 +9,7 @@ const AllCategories = () => {
     const [categories, setCategories] = useState(null)
 
     useEffect(() =>{
-       fetch('http://localhost:5000/allcategories')
+       fetch('https://server-assignment-12-abrarasif11.vercel.app/allcategories')
        .then(res => res.json())
        .then(data => setAllcategories(data))
     },[])

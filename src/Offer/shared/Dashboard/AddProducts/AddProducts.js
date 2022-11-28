@@ -1,156 +1,147 @@
-import React, { useContext, useState } from 'react';
-import toast from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../../../../Context/Authprovider/Authprovider';
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../../../Context/Authprovider/Authprovider";
 
-const AddAProduct = () => {
-    const [img, setImg] = useState(null)
-    const imageInput = (e) => {
-        const file = e.target.files[0]
-        setImg(file)
-    }
-    const { user } = useContext(AuthContext)
-   
-    const handleSubmit = event => {
-        event.preventDefault();
-        const form = event.target;
-        const model = form.model.value;
-        const resale_price = form.resale_price.value;
-        const conditiontype = form.conditiontype.value;
-        const mobilenumber = form.mobilenumber.value;
-        const location = form.location.value;
-        const productcategory = form.productcategory.value;
-        const description = form.description.value;
-        const years_of_use = form.years_of_use.value;
-        const posted_time = form.posted_time.value;
-        const seller_name = form.seller_name.value;
-        const original_price = form.original_price.value;
-        const yearofpurchase = form.yearofpurchase.value;
+const AddProducts = () => {
+  const { user } = useContext(AuthContext);
+  const handleAddProducts = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const model = form.model.value;
+    const original_price = form.originalPrice.value;
+    const resale_price = form.resalePrice.value;
+    const condition = form.condition.value;
+    const phone_number = form.phoneNumber.value;
+    const imageURL = form.imageURL.value;
+    const location = form.location.value;
+    const description = form.description.value;
+    const year_of_purchase = form.yearOfPurchase.value;
 
-        const picture = img;
-        const formData = new FormData();
-        formData.append('image', picture);
-        const url = `https://api.imgbb.com/1/upload?expiration=600&key=feb529cfc350eb66d0b30cf82fbe5f85`
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => res.json())
-            .then(imgData => {
-                if (imgData.success) {   
-                    const picture = imgData.data.url
-                    const addAProduct = {
-                        model: model,
-                        picture: picture,
-                        conditiontype: conditiontype,
-                        mobilenumber: mobilenumber,
-                        location: location,
-                        resale_price: resale_price,
-                        productcategory,
-                        description: description,
-                        years_of_use: years_of_use,
-                        posted_time: posted_time,
-                        seller_name: seller_name,
-                        original_price: original_price,
-                        yearofpurchase: yearofpurchase,
-                        picture: picture,
-                    };
-                    console.log(addAProduct);
+    const product = {
+      email,
+      model,
+      original_price,
+      resale_price,
+      condition,
+      phone_number,
+      imageURL,
+      location,
+      description,
+      year_of_purchase,
+    };
 
-                    fetch('http://localhost:5000/catagories', {
-                        method: 'POST',
-                        headers: {
-                            "content-type": "application/json",
-                        },
-                        body: JSON.stringify(addAProduct)
-                    })
-                        .then(res => res.json())
-                        .then(result => {
-                            console.log(result);
-                            toast.success('Product added successfully');
-                            Navigate('/dashboard/addaproduct')
-                        })
-                }
-            })
-    }
-    return (
-        <div className='text-center'>
-            <div className="flex flex-col max-w-md p-6 mt-10 rounded-md sm:p-10 bg-base-300 dark:text-black">
-                <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid">
-                    <div className="space-y-4">
-                        <div>
-                            <label htmlFor="model" className="block mb-2 text-sm">Model</label>
-                            <input type="model" name="model" id="model" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="resale_price" className="block mb-2 text-sm">Resale Price</label>
-                            <input type="resale_price" name="resale_price" id="resale_price" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <select type="conditiontype" name="conditiontype" id="conditiontype" className="select block w-full text-center text-black">
-                                <option disabled selected>Condition Type</option>
-                                <option>Excellent</option>
-                                <option>Good</option>
-                                <option>Fair</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="mobilenumber" className="block mb-2 text-sm">Mobile Number</label>
-                            <input type="mobilenumber" name="mobilenumber" id="mobilenumber" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="location" className="block mb-2 text-sm">Location</label>
-                            <input type="location" name="location" id="location" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-
-                            <select type="productcategory" name="productcategory" id="productcategory" defaultValue="User" className="select block w-full text-center text-black">
-                                <option disabled selected>Product Catagory</option>
-                                <option>Apple</option>
-                                <option>Xiaomi</option>
-                                <option>OnePlus</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="description" className="block mb-2 text-sm">Description</label>
-                            <input type="description" name="description" id="description" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="years_of_use" className="block mb-2 text-sm">Years of Use</label>
-                            <input type="years_of_use" name="years_of_use" id="years_of_use" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="posted_time" className="block mb-2 text-sm">Post Time</label>
-                            <input type="posted_time" name="posted_time" id="posted_time" placeholder="24 November,2022" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="seller_name" className="block mb-2 text-sm">Seller Name</label>
-                            <input type="seller_name" name="seller_name" id="seller_name" placeholder="" defaultValue={user.name} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="original_price" className="block mb-2 text-sm">Original Price</label>
-                            <input type="original_price" name="original_price" id="original_price" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="yearofpurchase" className="block mb-2 text-sm">Year Of Purchase</label>
-                            <input type="yearofpurchase" name="yearofpurchase" id="yearofpurchase" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-                        <div>
-                            <label htmlFor="file" className="block mb-2 text-sm">Drop A Picture</label>
-                            <input type="file" onChange={imageInput} name="file" id="file" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-base-300 dark:text-black" />
-                        </div>
-
-                    </div>
-                    <div className="space-y-2">
-                        <div>
-                            <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md btn btn-primary dark:text-base-300">Submit</button>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
+    console.log(product);
+    fetch(`https://server-assignment-12-abrarasif11.vercel.app/myproducts`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Booking Confirmed")
+          form.reset();
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+  return (
+    <div>
+      <h1 className="text-3xl mt-10 ml-4 font-semibold bg-black text-orange-600 w-fit px-2 py-2">Add a Products</h1>
+      <form onSubmit={handleAddProducts} action="" className="mt-5 ">
+        <div className="my-3">
+          <input
+            type="text"
+            name="email"
+            defaultValue={user?.email}
+            placeholder="Seller's email here"
+            className="input input-bordered w-4/5 ml-4"
+          />
         </div>
-    );
+        <div className="my-3">
+          <input
+            type="text"
+            name="model"
+            placeholder="Model Name "
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div className="my-3">
+          <input
+            type="text"
+            name="originalPrice"
+            placeholder="Original Price"
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div className="my-3">
+          <input
+            type="text"
+            name="resalePrice"
+            placeholder="Resale Price"
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div>
+          <select name="condition" className="select select-bordered w-4/5 ml-4">
+            <option disabled selected>
+              Conditon
+            </option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+          </select>
+        </div>
+        <div className="my-3">
+          <input
+            type="text"
+            name="phoneNumber"
+            placeholder="Phone Number"
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div className="my-3">
+          <input
+            type="text"
+            name="location"
+            placeholder="Location"
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div className="my-3">
+          <input
+            type="text"
+            name="imageURL"
+            placeholder="Put product image url here"
+            className="input input-bordered w-4/5 ml-4"
+          />
+        </div>
+        <div className="my-3">
+          <textarea
+            className="textarea textarea-bordered w-4/5 ml-4"
+            name="description"
+            placeholder="Product Description"
+          ></textarea>
+        </div>
+        <div className="my-3 ml-5">
+          <label htmlFor="">Year Of Purchase</label>
+          <input
+            type="date"
+            name="yearOfPurchase"
+            placeholder="Year Of Purchase"
+            className="input input-bordered w-2/4 ml-4"
+          />
+        </div>
+        <button type="submit" className="bg-orange-600 px-3 font-semibold py-3 rounded ml-4 mb-10">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
 };
 
-export default AddAProduct;
+export default AddProducts;

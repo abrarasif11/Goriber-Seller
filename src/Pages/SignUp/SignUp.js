@@ -33,7 +33,7 @@ const SignUp = () => {
     const saveUser = (name, email, dropdown) => {
         const usersSaved = { name, email, dropdown };
         console.log(usersSaved);
-        fetch("http://localhost:5000/usersList", {
+        fetch("https://server-assignment-12-abrarasif11.vercel.app/usersList", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

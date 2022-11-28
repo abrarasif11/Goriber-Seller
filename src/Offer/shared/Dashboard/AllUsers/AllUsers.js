@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const AllUser = () => {
-    const url = `http://localhost:5000/usersList`;
+    const url = `https://server-assignment-12-abrarasif11.vercel.app/usersList`;
     const [displayUser, setDisplayUser] = useState();
 
     const { data: users = [],refetch } = useQuery({
@@ -15,7 +15,7 @@ const AllUser = () => {
         }
     })
     const handleMakeAdmin = _id =>{
-        fetch (`http://localhost:5000/usersList/admin/${_id}`,{
+        fetch (`https://server-assignment-12-abrarasif11.vercel.app/usersList/admin/${_id}`,{
             method:'PUT'
         })
         .then(res => res.json())
@@ -31,7 +31,7 @@ const AllUser = () => {
     const handleDeleteUser = _id => {
 
 
-        fetch(`http://localhost:5000/usersList/${_id}`, {
+        fetch(`https://server-assignment-12-abrarasif11.vercel.app/usersList/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -47,7 +47,7 @@ const AllUser = () => {
     }
     return (
         <div>
-            <h1 className='text-3xl font-bold mb-10 mt-5 '>All Users</h1>
+            <h1 className='text-3xl font-bold mb-5 mt-10 bg-black text-orange-600 w-fit px-2 py-2 ml-4'>All Users</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
