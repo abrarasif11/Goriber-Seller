@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
-const AdvertisedItem = ({advertise }) => {
+const AdvertisedItem = ({advertiseItem }) => {
     const{user} = useContext(AuthContext)
     const [displayUser, setDisplayUser] = useState();
     const {
         picture, brand, model, location, original_price, resale_price, years_of_use, posted_time, sellers_name
-    } = advertise;
+    } = advertiseItem;
 
     const handleDeleteUser = _id => {
 
@@ -43,7 +43,7 @@ const AdvertisedItem = ({advertise }) => {
                         <p>Seller Name : {sellers_name}</p>
                         <p>Posted Time : {posted_time}</p>
                         {
-                          user?.role !== 'admin' &&  user?.role !== 'seller' &&  <button onClick={() => handleDeleteUser(advertise._id)} className='btn btn-danger'>Delete</button>
+                          user?.role !== 'admin' &&  user?.role !== 'seller' &&  <button onClick={() => handleDeleteUser(advertiseItem._id)} className='btn btn-danger'>Delete</button>
                         }
                     </div>
                 </div>

@@ -3,9 +3,10 @@ import React from 'react';
 import AdvertisedItem from './AdvertiseItem';
 
 const AdvertiseItems = () => {
-    const url = `https://server-assignment-12-omega.vercel.app/advertise`;
 
-    const { data: advertises = [] } = useQuery({
+    const url =`https://server-assignment-12-omega.vercel.app/advertise`;
+
+    const { data: advertiseItems = [], refetch } = useQuery({
         queryKey: ['advertise'],
         queryFn: async () => {
             const res = await fetch(url);
@@ -14,13 +15,19 @@ const AdvertiseItems = () => {
         }
     })
     return (
+
         <div>
-            {
-                advertises.map(advertise => <AdvertisedItem
-                key={advertise._id}
-                advertise={advertise}
-                ></AdvertisedItem>)
-            }
+            <h1 className='text-3xl font-bold mb-10 mt-5 '>Advertised Items</h1>
+
+            <div className='grid md:grid-cols-3 gap-3 my-20'>
+
+                {
+                    advertiseItems.map((advertiseItem) => <AdvertisedItem
+                        key={advertiseItem._id}
+                        advertiseItem={advertiseItem}
+                    ></AdvertisedItem>
+                    )}
+            </div>
         </div>
     );
 };

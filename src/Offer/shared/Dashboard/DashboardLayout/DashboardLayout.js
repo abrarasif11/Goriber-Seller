@@ -23,7 +23,7 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
                     {
                             isAdmin && <>
-                                <li><Link to="/dashboard/allusers" className='text-2xl'>All User</Link></li>
+                                <li><Link to="/dashboard/allusers" className='text-2xl'>All Sellers</Link></li>
                             </>
                         }
                         <li><Link to='/dashboard' className='text-2xl'>My Orders</Link></li>

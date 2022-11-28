@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Offer from '../../Offer/Offer';
+import AdvertisedItem from '../../Offer/shared/AdvertiseItem/AdvertiseItem';
 import CustomerReview from '../../Offer/shared/CustomerReview/CustomerReview';
 import useTitle from '../../Offer/shared/useTitle';
 import Banner from './Banner/Banner';

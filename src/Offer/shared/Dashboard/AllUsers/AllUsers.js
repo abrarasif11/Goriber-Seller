@@ -47,7 +47,7 @@ const AllUser = () => {
     }
     return (
         <div>
-            <h1 className='text-3xl font-bold mb-5 mt-10 bg-black text-orange-600 w-fit px-2 py-2 ml-4'>All Users</h1>
+            <h1 className='text-3xl font-bold mb-5 mt-10 bg-black text-orange-600 w-fit px-2 py-2 ml-4'>All Sellers</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
