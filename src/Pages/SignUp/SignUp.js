@@ -23,7 +23,7 @@ const SignUp = () => {
                 const user = userCredential.user;
                 console.log(user);
                 toast.success("User Created Successfully")
-                saveUser( username, email);
+                saveUser(username, email);
                 form.reset();
             })
             .catch((error) => {

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { AuthContext } from '../../Context/Authprovider/Authprovider';
+import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
-const CategoryModal = ({ categories }) => {
-    const { model, location, brand, resale_price, sellers_name } = categories;
+const CategoryModal = ({ singleCategories }) => {
+    const { model, location, brand, resale_price, sellers_name } = singleCategories;
+    console.log(singleCategories);
     const { user } = useContext(AuthContext);
     const handleBooking = event => {
         event.preventDefault()
@@ -18,7 +19,7 @@ const CategoryModal = ({ categories }) => {
         console.log(formValue);
 
         if (user?.uid) {
-            fetch("https://server-assignment-12-omega.vercel.app/items", {
+            fetch("https://server-assignment-12-omega.vercel.app/allcategories", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

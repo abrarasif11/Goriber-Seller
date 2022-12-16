@@ -1,7 +1,8 @@
 import React from 'react';
 
-const SinglePhoneInfo = ({ singlePhone }) => {
+const SinglePhoneInfo = ({ singlePhone, setSingleCategories }) => {
     const {picture,brand,model,location,original_price,resale_price,years_of_use,posted_time,sellers_name} = singlePhone
+    // console.log(singlePhone);
     return (
         <div className="max-w-xs font-poppins rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
             <img src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
@@ -16,7 +17,11 @@ const SinglePhoneInfo = ({ singlePhone }) => {
                     <p className=" text-xs font-semibold">Posted Time : {posted_time}</p>
                     <p className=" text-xs font-semibold">Seller Name : {sellers_name}</p>
                 </div>
-                <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900">Order Now</button>
+                <label 
+                 htmlFor="order-modal" type="button"
+                 className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900"
+                 onClick={() => setSingleCategories(singlePhone)}
+                 >Order Now</label>
             </div>
         </div>
     );
