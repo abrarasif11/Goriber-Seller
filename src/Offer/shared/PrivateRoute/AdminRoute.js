@@ -3,9 +3,6 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 import useAdmin from '../../../Pages/Home/hooks/useAdmin';
 import Spinner from '../Spinner/Spinner';
-
-
-
 const AdminRoute = ({children}) => {
     const {user,loading} = useContext(AuthContext);
     const [isAdmin ,isAdminLoading] = useAdmin(user?.email);

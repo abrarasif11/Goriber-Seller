@@ -1,11 +1,13 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
 import useTitle from '../../Offer/shared/useTitle';
 
 const Login = () => {
     useTitle("Log in")
+    const navigate = useNavigate();
+    navigate("/allcategories");
     const { user, signIn, googleSignIn } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const handleSubmit = (event) => {
@@ -13,6 +15,7 @@ const Login = () => {
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
+      navigate('/allcategories')
       console.log({ email, password });
   
       signIn(email, password)

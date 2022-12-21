@@ -40,7 +40,7 @@ const Home = () => {
                 </span></h1>
             <Offer></Offer>
             <h3 className='text-4xl font-bold text-center mt-20'>Categories to buy</h3>
-            <div className='grid sm:grid-cols-3 gap-3 sm:ml-4 sm:mt-10 mt-10 mb-10'>
+            <div className='grid sm:grid-cols-3 gap-8 mx-12 mt-10 mb-10'>
                 {
                     categories.map(category => <Category
                         key={category._id}

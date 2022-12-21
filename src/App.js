@@ -49,7 +49,7 @@ function App() {
           path: "/categories/:id",
           loader: ({ params }) =>
             fetch(`https://server-assignment-12-omega.vercel.app/categories/${params.id}`),
-          element: <SinglePhoneCategory></SinglePhoneCategory>,
+          element: <PrivateRoute><SinglePhoneCategory></SinglePhoneCategory></PrivateRoute>,
         },
 
       ]

@@ -30,7 +30,6 @@ const OrderModal = ({ categories }) => {
                     console.log(data);
                     if (data.acknowledged) {
                         toast.success("Order Confirm Successfully");
-
                     }
                 })
                 .catch((err) => console.log(err));
@@ -55,7 +54,6 @@ const OrderModal = ({ categories }) => {
                         <br />
                         <input className='bg-orange-600 px-2 py-2 rounded font-semibold text-black w-full ' type="Submit" value="Submit" />
                     </form>
-
                 </div>
             </div>
         </>

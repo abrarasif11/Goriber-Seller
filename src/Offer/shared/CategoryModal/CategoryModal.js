@@ -17,9 +17,8 @@ const CategoryModal = ({ singleCategories }) => {
         const meeting = form.meeting.value;
         const formValue = { name, email, meeting, phone, price, model };
         console.log(formValue);
-
         if (user?.uid) {
-            fetch("https://server-assignment-12-omega.vercel.app/allcategories", {
+            fetch("https://server-assignment-12-omega.vercel.app/items", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -31,7 +30,6 @@ const CategoryModal = ({ singleCategories }) => {
                     console.log(data);
                     if (data.acknowledged) {
                         toast.success("Order Confirm Successfully");
-
                     }
                 })
                 .catch((err) => console.log(err));
@@ -56,7 +54,6 @@ const CategoryModal = ({ singleCategories }) => {
                         <br />
                         <input className='bg-orange-600 px-2 py-2 rounded font-semibold text-black w-full ' type="Submit" value="Submit" />
                     </form>
-
                 </div>
             </div>
         </>
