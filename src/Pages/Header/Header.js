@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assests/240_F_204205339_vCkKDvN8YBgx0Q77bejn5xHY6q4JbSnN.jpg'
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
+import { MdDarkMode } from 'react-icons/md';
+import { BsFillSunFill } from 'react-icons/bs';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, dark, setDark } = useContext(AuthContext);
     const handleLogout = () => {
         logOut()
             .then()
@@ -63,16 +65,16 @@ const Header = () => {
                                             Dashboard
 
                                         </Link>
-                                        
+
                                         <span className=""><img src={user?.photoURL} title={user?.displayName} className=" ml-5 h-10 sm:h2 rounded-full" alt="" /></span>
-                                        
+
                                         <button
                                             onClick={handleLogout}
                                             className="font-medium tracking-wide ml-6 bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
                                         >
                                             Log Out
                                         </button>
-                                        
+
                                     </div>
                                     :
                                     <Link
@@ -84,6 +86,13 @@ const Header = () => {
                                     </Link>
                             }
                         </li>
+                        <React.Fragment>
+                            <button className='text-white ml-[50px]' onClick={() => setDark(!dark)}>
+                                {
+                                    dark ? <MdDarkMode className="text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
+                                }
+                            </button>
+                        </React.Fragment>
                     </ul>
                     <div class="lg:hidden">
                         <button
@@ -182,7 +191,7 @@ const Header = () => {
                                                             </Link>
                                                             <button
                                                                 onClick={handleLogout}
-                                                                className="font-medium tracking-wide bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                                                className="font-medium tracking-wide bg-orange-600 px-2 ml-7 rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
                                                             >
                                                                 Log Out
                                                             </button>
@@ -196,6 +205,13 @@ const Header = () => {
                                                             Log in
                                                         </Link>
                                                 }
+                                                <React.Fragment>
+                                                    <button className='text-white ml-7 mt-4'  onClick={() => setDark(!dark)}>
+                                                        {
+                                                            dark ? <MdDarkMode className=" text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
+                                                        }
+                                                    </button>
+                                                </React.Fragment>
                                             </li>
 
                                         </ul>
