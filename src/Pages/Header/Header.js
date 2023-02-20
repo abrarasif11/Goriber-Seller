@@ -13,14 +13,14 @@ const Header = () => {
             .catch(err => console.log(err));
     }
     return (
-        <div class="bg-black font-poppins">
+        <div className={`${dark ? 'bg-orange-600': 'bg-black'} font-poppins`}>
             <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <Link
                                 to="/"
-                                class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                class={`font-semibold tracking-wide ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                             >
                                 Home
                             </Link>
@@ -28,7 +28,7 @@ const Header = () => {
                         <li>
                             <Link
                                 to="/allcategories"
-                                class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                class={`font-semibold tracking-wide  ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                             >
                                 All Categories
                             </Link>
@@ -39,7 +39,7 @@ const Header = () => {
                     >
                         <div className='flex items-center'>
                             <img className='w-[50px] ' src={img} alt="" />
-                            <span class="ml-2 text-xl font-bold tracking-wide text-orange-600 uppercase">
+                            <span class={`ml-2 text-xl font-bold tracking-wide  ${dark ? 'text-black': 'text-orange-600'} uppercase`}>
                                 Goriber Seller
                             </span>
                         </div>
@@ -49,7 +49,7 @@ const Header = () => {
                         <li>
                             <Link
                                 to="/blog"
-                                class="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                class={`font-semibold tracking-wide  ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                             >
                                 Blog
                             </Link>
@@ -60,7 +60,7 @@ const Header = () => {
                                     <div className='flex justify-center items-center'>
                                         <Link
                                             to="/dashboard"
-                                            className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                            className={`font-semibold tracking-wide  ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                                         >
                                             Dashboard
 
@@ -70,7 +70,7 @@ const Header = () => {
 
                                         <button
                                             onClick={handleLogout}
-                                            className="font-medium tracking-wide ml-6 bg-orange-600 px-2  rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                            className={`font-semibold tracking-wide ml-6  ${dark ? 'bg-orange-600': 'bg-black'} px-2  rounded py-2   ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                                         >
                                             Log Out
                                         </button>
@@ -80,14 +80,14 @@ const Header = () => {
                                     <Link
                                         to="/login"
 
-                                        className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                        className={`font-semibold tracking-wide  ${dark ? 'text-black': 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                                     >
                                         Log in
                                     </Link>
                             }
                         </li>
                         <React.Fragment>
-                            <button className='text-white ml-[50px]' onClick={() => setDark(!dark)}>
+                            <button className={` ${dark ? 'text-black': 'text-orange-600'} ml-[50px]`} onClick={() => setDark(!dark)}>
                                 {
                                     dark ? <MdDarkMode className="text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
                                 }
@@ -206,7 +206,7 @@ const Header = () => {
                                                         </Link>
                                                 }
                                                 <React.Fragment>
-                                                    <button className='text-white ml-7 mt-4'  onClick={() => setDark(!dark)}>
+                                                    <button className='text-orange-600 ml-7 mt-4'  onClick={() => setDark(!dark)}>
                                                         {
                                                             dark ? <MdDarkMode className=" text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
                                                         }

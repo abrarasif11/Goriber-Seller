@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Context/Authprovider/Authprovider';
 import useTitle from '../../Offer/shared/useTitle';
 import OrderModal from '../OrderModal/OrderModal';
 import AllCategory from './AllCategory';
 
 const AllCategories = () => {
+    const { dark } = useContext(AuthContext);
     useTitle("All Categories")
     const [allcategories, setAllcategories] = useState([]);
     const [categories, setCategories] = useState(null)
@@ -15,7 +17,7 @@ const AllCategories = () => {
     }, [])
     return (
         <div>
-            <h3 className='text-3xl font-poppins font-semibold text-center mt-10'>Total Products : {allcategories.length}</h3>
+            <h3 className={`text-3xl font-poppins ${dark ? 'text-white': 'text-black'} font-semibold text-center mt-10`}>Total Products : {allcategories.length}</h3>
             <div className='grid sm:grid-cols-3 gap-7 mx-10  mb-20 '>
                 {
                     allcategories.map(allcategory =>

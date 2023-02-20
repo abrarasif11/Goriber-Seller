@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
 const CustomerReview = () => {
+    const { dark } = useContext(AuthContext);
     return (
-        <div className="flex flex-col mx-auto max-w-xl p-8 mb-20 shadow-sm rounded-xl lg:p-12 bg-black text-orange-600">
+        <div className={`flex flex-col mx-auto max-w-xl p-8 mb-20 shadow-sm rounded-xl lg:p-12 ${dark ? 'bg-orange-600': 'bg-black'} ${dark ? 'text-black': 'text-orange-600'} `}>
             <div className="flex flex-col w-full">
                 <h2 className="text-3xl font-semibold text-center">Customer reviews</h2>
                 <div className="flex flex-wrap items-center mt-2 mb-1 space-x-2">

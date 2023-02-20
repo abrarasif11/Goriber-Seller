@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/Authprovider/Authprovider';
 import Offer from '../../Offer/Offer';
 import AdvertisedItem from '../../Offer/shared/AdvertiseItem/AdvertiseItem';
 import CustomerReview from '../../Offer/shared/CustomerReview/CustomerReview';
@@ -8,6 +9,7 @@ import Banner from './Banner/Banner';
 import Category from './Category/Category';
 
 const Home = () => {
+    const { dark } = useContext(AuthContext);
     useTitle('Home')
     const navigate = useNavigate();
     const handleAllCategory = () => {
@@ -16,12 +18,12 @@ const Home = () => {
     const categories = useLoaderData();
     return (
         <div className='font-poppins'>
-            <h1 className='text-center font-poppins text-3xl mt-10 font-bold'>Welcome To ,
+            <h1 className={`text-center font-poppins  ${dark ? 'text-white': 'text-orange-600'} text-3xl mt-10 font-bold`}>Welcome To ,
                 <br />
                 <span className='text-5xl text-orange-600'>Goriber Seller</span></h1>
             <Banner></Banner>
             <h1 className='text-center font-poppins text-5xl text-orange-600 mt-20 font-bold'>One of the biggest ,
-                <span className='text-2xl text-black'>
+                <span className={`text-2xl  ${dark ? 'text-white': 'text-black'} `}>
                     <span >
                         <p className='mt-4'>
                             Second hand phone's <span className='text-orange-600'>online</span> market.
@@ -39,7 +41,7 @@ const Home = () => {
                     </span>
                 </span></h1>
             <Offer></Offer>
-            <h3 className='text-4xl font-bold text-center mt-20'>Categories to buy</h3>
+            <h3 className={`text-4xl font-bold ${dark ? 'text-white': 'text-black'} text-center mt-20`}>Categories to buy</h3>
             <div className='grid sm:grid-cols-3 gap-8 mx-12 mt-10 mb-10'>
                 {
                     categories.map(category => <Category
@@ -62,7 +64,7 @@ const Home = () => {
                     </button>
                 </Link>
             
-            <h3 className='text-center text-4xl mt-10 font-bold mb-10'>See Our Customer Review</h3>
+            <h3 className={`text-center ${dark ? 'text-white': 'text-black'} text-4xl mt-10 font-bold mb-10`}>See Our Customer Review</h3>
            <CustomerReview></CustomerReview>
   
         </div>
