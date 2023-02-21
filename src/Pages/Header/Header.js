@@ -101,7 +101,7 @@ const Header = () => {
                             class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
                             onClick={() => setIsMenuOpen(true)}
                         >
-                            <svg class="w-5 text-orange-600" viewBox="0 0 24 24">
+                            <svg class={`w-5 ${dark ? 'text-black': 'text-orange-600'}`} viewBox="0 0 24 24">
                                 <path
                                     fill="currentColor"
                                     d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
@@ -185,13 +185,13 @@ const Header = () => {
                                                         <>
                                                             <Link
                                                                 to="/dashboard"
-                                                                className="font-medium tracking-wide text-orange-600 transition-colors duration-200 hover:text-teal-accent-400"
+                                                                className="font-medium tracking-wide text-orange-600 -mt[10px] transition-colors duration-200 hover:text-teal-accent-400"
                                                             >
                                                                 Dashboard
                                                             </Link>
                                                             <button
                                                                 onClick={handleLogout}
-                                                                className="font-medium tracking-wide bg-orange-600 px-2 ml-7 rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                                                className="font-medium tracking-wide bg-orange-600 px-2 ml-5 rounded py-2  text-black transition-colors duration-200 hover:text-teal-accent-400"
                                                             >
                                                                 Log Out
                                                             </button>
