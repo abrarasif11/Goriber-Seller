@@ -4,7 +4,7 @@ const SinglePhoneInfo = ({ singlePhone, setSingleCategories }) => {
     const {picture,brand,model,location,original_price,resale_price,years_of_use,posted_time,sellers_name} = singlePhone
     // console.log(singlePhone);
     return (
-        <div className="max-w-xs font-poppins rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+        <div className="max-w-xs font-poppins rounded-md shadow-md bg-stone-300 text-black">
             <img src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
             <div className="flex flex-col justify-between p-6 space-y-8">
             <div className="space-y-2">
@@ -19,7 +19,7 @@ const SinglePhoneInfo = ({ singlePhone, setSingleCategories }) => {
                 </div>
                 <label 
                  htmlFor="order-modal" type="button"
-                 className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 dark:text-gray-900"
+                 className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-600 text-black"
                  onClick={() => setSingleCategories(singlePhone)}
                  >Order Now</label>
             </div>

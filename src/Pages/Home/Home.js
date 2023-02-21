@@ -56,7 +56,7 @@ const Home = () => {
                 <Link className='flex items-center justify-center
                        ' to='/allcategories'>
                     <button
-                        className="py-4 px-6  m-8 font-poppins text-xl text-black  font-medium rounded-lg bg-gradient-to-rounded-md bg-orange-600
+                        className="py-4 px-6  m-8 font-poppins text-xl text-black  font-semibold rounded-lg bg-gradient-to-rounded-md bg-orange-600
                        hover:bg-orange-400	 hover:text-black"
                         onClick={handleAllCategory}
                     >

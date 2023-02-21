@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Context/Authprovider/Authprovider';
 import useTitle from '../../Offer/shared/useTitle';
 
 const Blog = () => {
+    const { dark } = useContext(AuthContext);
     useTitle("Blog")
     return (
-        <section className="font-poppins mb-10 mt-10 dark:bg-gray-800 dark:text-gray-100 mt-10">
+        <section className={`font-poppins mb-10 mt-10 ${dark ? 'text-white': 'text-black'}  mt-10`}>
             <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                 <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl"> Questions Sections</h2>
                 <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
