@@ -4,7 +4,7 @@ const SinglePhoneInfo = ({ singlePhone, setSingleCategories }) => {
     const {picture,brand,model,location,original_price,resale_price,years_of_use,posted_time,sellers_name} = singlePhone
     // console.log(singlePhone);
     return (
-        <div className="max-w-xs font-poppins rounded-md shadow-md bg-stone-300 text-black">
+        <div className="max-w-xs font-poppins rounded-md shadow-md hover:scale-105 transition-all bg-stone-300 text-black">
             <img src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
             <div className="flex flex-col justify-between p-6 space-y-8">
             <div className="space-y-2">
