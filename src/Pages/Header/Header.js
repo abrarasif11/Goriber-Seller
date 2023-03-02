@@ -4,6 +4,7 @@ import img from '../../assests/240_F_204205339_vCkKDvN8YBgx0Q77bejn5xHY6q4JbSnN.
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
 import { MdDarkMode } from 'react-icons/md';
 import { BsFillSunFill } from 'react-icons/bs';
+import { FaUserCircle } from 'react-icons/fa';
 const Header = () => {
     const { user, logOut, dark, setDark } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -51,7 +52,7 @@ const Header = () => {
 
             {user?.uid ? (
                 <li
-                className={`font-semibold tracking-wide font-poppins ${dark ? 'text-black' : 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
+                    className={`font-semibold tracking-wide font-poppins ${dark ? 'text-black' : 'text-orange-600'} transition-colors duration-200 hover:text-teal-accent-400`}
                     onClick={handleLogOut}
                 >
                     <button>Logout</button>
@@ -62,23 +63,28 @@ const Header = () => {
                 </li>
             )}
             <React.Fragment>
-                            <button className={` ${dark ? 'text-black': 'text-orange-600'} ml-[20px]`} onClick={() => setDark(!dark)}>
-                                {
-                                    dark ? <MdDarkMode className="text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
-                                }
-                            </button>
-                        </React.Fragment>
+                <button className={` ${dark ? 'text-black' : 'text-orange-600'} ml-[20px] mr-[10px]`} onClick={() => setDark(!dark)}>
+                    {
+                        dark ? <MdDarkMode className="text-2xl"></MdDarkMode> : <BsFillSunFill className="text-2xl"></BsFillSunFill>
+                    }
+                </button>
+            </React.Fragment>
             {user?.uid && (
                 <div
                     className="tooltip ml-4 mb-1 lg:tooltip-left md:tooltip-right mt-1 dropdown dropdown-bottom dropdown-end"
                     data-tip={user?.displayName}
                 >
                     <label tabIndex={0}>
-                        <img
-                            className="w-[36px] h-[36px] rounded-full mr-5"
-                            src={user?.photoURL}
-                            alt=""
-                        />
+                        {
+                            user?.photoURL ?
+                                <img
+                                    className="w-[36px] h-[36px] rounded-full mr-5"
+                                    src={user?.photoURL}
+                                    alt=""
+                                />
+                                :
+                                <FaUserCircle className={`${dark ? 'text-black' : 'text-orange-600'} w-[30px] mt-1 mr-2 h-[50px]`}></FaUserCircle>
+                        }
                     </label>
 
                 </div>
@@ -87,10 +93,10 @@ const Header = () => {
     );
 
     return (
-        <div className={`navbar ${dark ? 'bg-orange-600': 'bg-black'} flex justify-between`}>
+        <div className={`navbar ${dark ? 'bg-orange-600' : 'bg-black'} flex justify-between`}>
             <div className="navbar-start">
                 <div className="dropdown">
-                    <label tabIndex={0} className={`btn btn-ghost ${dark ? 'text-black': 'text-orange-600'} lg:hidden`}>
+                    <label tabIndex={0} className={`btn btn-ghost ${dark ? 'text-black' : 'text-orange-600'} lg:hidden`}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -108,7 +114,7 @@ const Header = () => {
                     </label>
                     <ul
                         tabIndex={1}
-                        className={`menu menu-compact dropdown-content mt-3 p-2 shadow ${dark ? 'bg-orange-600': 'bg-black'} rounded-box w-52`}
+                        className={`menu menu-compact dropdown-content mt-3 p-2 shadow ${dark ? 'bg-orange-600' : 'bg-black'} rounded-box w-52`}
                     >
                         {menuItems}
                     </ul>
@@ -117,7 +123,7 @@ const Header = () => {
 
                     <Link
                         to="/"
-                        className={`btn btn-ghost ${dark ? 'text-black': 'text-orange-600'} font-poppins font-semibold normal-case text-2xl`}
+                        className={`btn btn-ghost ${dark ? 'text-black' : 'text-orange-600'} font-poppins font-semibold normal-case text-2xl`}
                     >
                         <img className='w-[40px] rounded-xl mr-4' src={img} alt="" />
                         Goriber Seller
