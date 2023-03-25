@@ -31,6 +31,7 @@ const AllCategories = () => {
             {categories &&
                 <OrderModal
                     categories={categories}
+                    setCategories={setCategories}
                 ></OrderModal>
             }
         </div>

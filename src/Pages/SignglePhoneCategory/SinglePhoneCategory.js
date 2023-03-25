@@ -21,6 +21,7 @@ const SinglePhoneCategory = () => {
                 singleCategories &&
                 <CategoryModal
                     singleCategories={singleCategories}
+                    setSingleCategories={setSingleCategories}
                 >
                 </CategoryModal>
             }

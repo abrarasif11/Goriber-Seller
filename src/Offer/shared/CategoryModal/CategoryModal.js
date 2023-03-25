@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
-const CategoryModal = ({ singleCategories }) => {
+const CategoryModal = ({ singleCategories , setSingleCategories }) => {
     const { model, location, brand, resale_price, sellers_name } = singleCategories;
     console.log(singleCategories);
     const { user } = useContext(AuthContext);
@@ -29,6 +29,7 @@ const CategoryModal = ({ singleCategories }) => {
                 .then((data) => {
                     console.log(data);
                     if (data.acknowledged) {
+                        setSingleCategories(null)
                         toast.success("Order Confirm Successfully");
                     }
                 })
